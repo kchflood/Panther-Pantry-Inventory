@@ -127,4 +127,56 @@ body {margin:0;}
     </div>
     
 </body>
+<script>
+
+function Inventory_Item (id, name, quantity, category, subcategory) {
+    this.id = id;
+    this.name = name;
+    this.quantity = quantity;
+    this.category = category;
+    this.subcategory = subcategory;
+    this.add_item_quantity = function(add_item_quantity) {
+        return quantity=quantity+add_item_quantity;
+    };
+    this.subtract_item_quantity = function(subtract_item_quantity) {
+        return quantity=quantity-subtract_item_quantity;
+    };
+    this.change_Category = function(change_Category) {
+        return category=change_Category;
+    };
+    this.delete = function() {
+    };
+}
+
+var inventory_item = new Inventory_Item(1, 'cheerios', 3, 'grains', 'cereal')
+console.log(inventory_item.name)
+
+function Manager_Class (user_id, user_password, user_permissions){
+	this.user_id = user_id;
+	this.user_password = user_password;
+	this.user_permissions = user_permissions;
+
+	this.create_account = function(user_id, user_password){
+
+	};
+	this.login = function(user_id, user_password){
+
+	};
+	this.browse_inventory = function(){};
+	this.add_item = function(Inventory_Item){};
+	this.delete_item = function(Inventory_Item){};
+	this.add_item_quantity = function(Inventory_Item, add_item_quantity){
+		return Inventory_Item.quantity= Inventory_Item.quantity + add_item_quantity;
+	};
+	this.subtract_item_quantity = function(Inventory_Item, subtract_item_quantity){
+		return Inventory_Item.quantity = Inventory_Item.quantity - subtract_item_quantity;
+	};
+	this.accept_order_request = function(){};
+	this.deny_order_request = function(){};
+ 
+ var manager = new Manager_Class('studentmanager1@student.gsu.edu', 'password', 777)
+ console.log(manager.name, manager.password)
+}
+
+</script>
 </html>
