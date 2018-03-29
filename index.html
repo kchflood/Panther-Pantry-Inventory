@@ -2,10 +2,6 @@
 <html>
 <head>
 <style>
- body {
-    background-image: url("background.jpg");
-}
-body {margin:0;}
 
 .topnav {
     overflow: hidden;
@@ -61,7 +57,7 @@ body {margin:0;}
 
   h1 {
     font-size: 50px;  
-    font-family: "Lucida Console"
+    font-family: "Arial"
   }
 
   h2 {
@@ -82,17 +78,82 @@ body {margin:0;}
     width: 40px;
     border: 0;
   }
+  button {
+    background-color : green;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    float : right;
+    height : 30px;
+    text-align: center;
+    line-height: 0px;
+  }
+  p {
+    width: 50%;
+  }
+  .caption {
+    display: block;
+  }
+  
+  .image1{
+    vertical-align: top;
+    text-align: center;
+    float: right;
+    padding-right: 10px;
+  }
+ a {
+   text-decoration : none;
+   color : white;
+ }
+ input[type=submit] {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100px;
+}
 </style>
 </head>
 <body>
+  <button type="button"><a href="home.html">Log in</a></button>
 <br>
 <br>
 <img src="pantherpantry.jpg" align="left" class="logo"> <h1><center> Panther's Pantry </center> </h1>
 <h2> <center> Nonprofit Organization in Atlanta, Georgia</center> </h2>
   <div class="topnav">
-    <a class="active" href="Index.html">Home</a>
-    <a href="browseinventory.html">Browse Inventory</a>
+    <a class="active" href="index.html">Home</a>
+    <a href="browse.php">Browse Inventory</a>
+    <a href="cart.php" style="float:right"> <img src="cart.png" style="width:15px; height:15px;"> Shopping Cart </a>
   </div>
+
+  <div class="image1">
+      <img src="map.png"/>
+      <span class="caption">140 Decatur St SE (2.56 mi)<br>
+          Atlanta, Georgia 30303
+        <br>
+      (404)-413-2364</span>
+      <br>
+      For more information visit our Facebook Page!
+      <br>
+      <a href="https://www.facebook.com/pantherspantry/">
+        <img src="facebook.ico" class="icon">
+        </a>
+        <br>
+        <h3 style="text-align:center"> Hours </h3>
+        <h2>Monday</h2>
+        <h4 style="text-align:center">9AM-10:30AM<br>4PM-5:15PM</h4>
+        <h2>Tuesday</h2>
+        <h4 style="text-align:center">11AM-12:15AM<br>4PM-5:15PM</h4>
+        <h2>Wednesday</h2>
+        <h4 style="text-align:center">10AM-10:30AM</h4>
+        <h2>Thursday</h2>
+        <h4 style="text-align:center">9AM-10:30AM<br>4PM-5:15PM</h4>
+    </div>
 
 <h3> Our Story </h3>
 <p> Panther's Pantry, Georgia State University's new food pantry operated by the Nutrition Student Network in the Department of Nutrition, Byrdine F. Lewis School of Nursing and Health Professions, aims to reduce short term food insecurity for students experiencing the stress of financial constraints. </p>
@@ -102,29 +163,8 @@ body {margin:0;}
 <h3> About </h3>
 <p>Panther’s Pantry aims to alleviate the burden of food insecurity and increase the productivity and social well-being of Georigia State students.</p>
 <h3> General Information </h3>
-<p>Panther's Pantry is located in Parking Lot B under the Urban Life Building which can be accessed by either taking elevators #4 or #6 to the parking level or by entering through B Lot on Decatur St. </p>
-<p>Help support Panther's Pantry and our students by donating non-perishable food items such as soup, crackers, tuna fish, canned vegetables/fruits, tomato sauce, rice, peanut butter and pasta. </p>
-<p>Hours of operation change from semester to semester and are posted on our wall.</p>
+<p>Panther's Pantry is located in Parking Lot B under the Urban Life Building which can be accessed by either taking elevators #4 or #6 to the parking level or by entering through B Lot on Decatur St.
+<p>Help support Panther's Pantry and our students by donating non-perishable food items such as soup, crackers, tuna fish, canned vegetables/fruits, tomato sauce, rice, peanut butter and pasta. Hours of operation change from semester to semester and are posted on our wall.</p>
 <p>For anyone interested in learning more about Panther's Pantry, please contact us at 404-413-2364 during operating hours.</p>
-<h3> Hours </h3>
-<h2>Mondays</h2>
-<p>9:00AM - 10:30AM</p>
-<p>4:00PM - 5:15PM</p>
-<h2>Tuesday</h2>
-<p>11:00AM - 12:15PM</p>
-<p>4:00PM - 5:15PM</p>
-<h2>Wednesday</h2>
-<p>10:00AM - 10:30AM</p>
-<h2>Thursday</h2>
-<p>9:00AM - 10:30AM</p>
-<p>4:00PM - 5:15PM</p>
-<div style="position: relatove" class="social">
-    <p style="position: fixed; bottom: 0; width:100%; text-align: center">
-    For more information visit our Facebook page!
-    <br>
-    <a href="https://www.facebook.com/pantherspantry/">
-      <img src="facebook.ico" class="icon">
-    </div>
-    
 </body>
 </html>
