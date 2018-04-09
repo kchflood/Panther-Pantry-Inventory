@@ -1,2 +1,5 @@
-# Panther-Pantry-Inventory
-A program to manage the food truck's inventory
+# Panther's-Pantry-Inventory-Manager
+Team Members: Kevin Flood, Joshua Jang, Stephen Njunguna, Chin Yik Tan
+
+Problem Statement: Panther's Pantry is a non-profit food bank operated and maintained by graduate students in Georgia State's Nutrition Department. The Pantry's goal is to alleviate the burden of food insecurity by providing students at GSU with healthy and easily accessible food options. The goal of this inventory management software is two-fold: we wish to reduce the administrative workload that manual upkeep of the Pantry requires for the Nutrition graduate student administrators, and we would also like to make the Pantry more accessible to the students who wish to shop here by providing an up-to-date account of their inventory through a dedicated web page. By allowing students to view what the Pantry currently has in stock, as well as allowing them to make shopping carts which can be picked up at the Pantry, we can make shopping at the Pantry more efficient. A large portion of the graduate student administrators time currently goes into manual updating of the Panther's Pantry inventroy, so by making this an easier part of the work flow, we will free up graduate students so taht they can more closely work and advise student shoppers on how best to approach their nutrition. 
+
