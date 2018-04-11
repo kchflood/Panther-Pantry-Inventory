@@ -8,7 +8,7 @@ session_start();
 
 .topnav {
     overflow: hidden;
-    background-color: #0e58ce;
+    background-color: red;
   }
   
   .topnav a {
@@ -132,7 +132,7 @@ input[type=submit] {
     color: white;
     text-decoration: none;
     cursor: pointer;
-    height: 25px;
+    height: 25px;  
 }
 table {
     border-collapse: collapse;
@@ -153,21 +153,63 @@ tr:hover {
 <?php
 include("config.php");
 
+if(!isset($_SESSION["cart"])) {
+  $_SESSION["cart"] = 0;
+} else {
+  $_SESSION["cart"] = $_SESSION["cart"];
+}
+
 if(($_SESSION["loggedin"]) == 0) {
   echo "<button type='button'><a href='home.php'>Log in</a></button>";
 } else {
   echo "<button type='button' style='background-color : red'><a href='home.php'>Log out</a></button>";
 }
+/*
+$sql = "SELECT * FROM inventory";
+$result = mysql_query($sql);
+if(mysql_num_rows($result)>0) {
+    while($row = mysql_fetch_assoc($result))
+    {
+        $invname = $row['name'];
+        $invquant = $row['quantity'];
+    }
+}
+
+$addCart = 1;
+
+$soup_quant = $_POST['soup'];
+$shirts_name = "T-shirt";
+$shirts_price = 4.49;
+
+if(!empty($_POST['shirtsq'])) {
+    $sql2 = 'INSERT INTO `cart` (`name`,`price`,`quantity`,`added`)
+    VALUES ("'.$shirts_name.'","'.$shirts_price.'","'.$shirts_quant.'","'.$addCart.'");';
+    mysql_query($sql2);    
+    }
+*/
+
+$query = mysql_query("SELECT * FROM inventory WHERE name='apples'");
+$row = mysql_fetch_array($query);
+$appleQuant = $row['quantity'];
+
+$query = mysql_query("SELECT * FROM inventory WHERE name='cheerios'");
+$row = mysql_fetch_array($query);
+$cheeriosQuant = $row['quantity'];
+
+$query = mysql_query("SELECT * FROM inventory WHERE name='soup'");
+$row = mysql_fetch_array($query);
+$soupQuant = $row['quantity'];
 
 ?>
 <br>
 <br>
 <img src="pantherpantry.jpg" align="left" class="logo"> <h1><center> Panther's Pantry </center> </h1>
 <h2> <center> Nonprofit Organization in Atlanta, Georgia</center> </h2>
+<h2 style="color:red;"> <center> ADMIN MODE</center> </h2>
   <div class="topnav">
-    <a href="index.php">Home</a>
-    <a class="active" href="browse.php">Browse Inventory</a>
-    <a href="cart.php" style="float:right"> <img src="cart.png" style="width:15px; height:15px;"> Shopping Cart </a>
+    <a href="aindex.php">Home</a>
+    <a class="active" href="abrowse.php">Browse Inventory</a>
+    <a href="modify.php" style="float:right" style="background-color:red"> <img src="gear.jpg" style="width:15px; height:15px;"> Update Inventory </a>
   </div>
 
 <h1 style="text-align:center">Inventory</h1>
@@ -176,61 +218,40 @@ if(($_SESSION["loggedin"]) == 0) {
 <th> Item </th>
 <th> Quantity </th>
 <th> Category </th>
-<th> Order Quantity </th>
-<th> Add to Cart </th>
 </tr>
 <?php
+$id = 0;
 $sql = "SELECT name, quantity, category  FROM inventory";
 $result = mysql_query($sql);
 $count = mysql_num_rows($result);
 if(mysql_num_rows($result)>0) {
     while ($row = mysql_fetch_assoc($result)) {
+        $id++;
         $invname = $row["name"];
         $invquant = $row["quantity"];
         $invcat = $row["category"];
         echo "<form action='' method='post'>";
         echo "<tr>";
         echo "<td> $invname </td>";
-        if ($invquant == 0) {
-        echo "<td> Out of Stock </td>";
-        } else {
         echo "<td> $invquant </td>";
-        }
         echo "<td> $invcat </td>";
-        echo "<td> <input type='text' name='quant$invname' size='2' maxlength='2'> </td>";
-        if ($invquant == 0) {
-        echo "<td> <input type='submit' value='Add To Cart' style='background-color:gray' disabled='disabled'> </td>";
-        } else {
-        echo "<td> <input type='submit' value='Add To Cart'> </td>";  
-        }
         echo "</tr>";
         echo "</form>";
 
-        $quantnum = $_POST["quant$invname"];
+        $quantnum = $_POST["quant$id"];
 
-        if(!empty($_POST["quant$invname"])){
-          if($quantnum > $invquant) {
-            /*
-            echo "<script type='text/javascript'>";
-            echo "alert('Order Quantity exceeds Inventory Quantity for: $invname. Cannot add to order.')";
-            echo "</script>";
-            */
-          } else if ($quantnum <= 1){
-            /*
-            echo "<script type='text/javascript'>";
-            echo "alert('Order for: $invname. Must be one or more!')";
-            echo "</script>";
-            */
-          } else {
-          $sql = mysql_query("UPDATE inventory SET added='1', orderquant='$quantnum' WHERE name='$invname'");
+        if(!empty($quantnum)){
+          $sql = mysql_query("UPDATE inventory SET added='1', orderquant='$quantnum' WHERE id='$id'");
           mysql_query($sql);
         }
-      }
+
     }
 } else {
     echo "Inventory empty";
 }
 ?>
+
+
 </form>
 
 </body>

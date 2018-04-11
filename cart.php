@@ -27,40 +27,71 @@ div {
     cursor: pointer;
     width: 100px;
 }
+table {
+    border-collapse: collapse;
+    width: 30%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+tr:hover {
+    background-color:#f5f5f5;
+}
         </style>
 
 <body>
 <?php
+
+
 include("config.php");
 
-
+if(($_SESSION["loggedin"]) == 0) {
+    header("Location: home.php"); die;
+}
 
 echo "<h1>Shopping Cart</h1>";
 echo "<div>";
 echo "<br>";
-echo "<pre>Item     Quantity</pre>";
-
+echo "<table align='center'>";
+echo "<tr>";
+echo "<th> Item </th>";
+echo "<th> Quantity </th>";
+echo "</tr>";
 $sql = "SELECT * FROM inventory";
 $result = mysql_query($sql);
+$numitems = mysql_num_rows($result);
+$_SESSION["cart"] = $numitems;
+
 if(mysql_num_rows($result)>0) {
     while($row = mysql_fetch_assoc($result))
     {
-       
         $pname = $row["name"];
-        $pquant = $row["quantity"];
+        $pquant = $row["orderquant"];
         $added = $row["added"];
 
         if($added == 1) {
-            echo "<pre>$pname   $pquant</pre>";
+            echo "<tr>";
+            echo "<td> $pname </td>";
+            echo "<td> $pquant </td>";
+            echo "</tr>";
        }
-    }
-     
+    }   
 }
+echo "</table>";
 ?>
 <br>
-<form action="confirmation.php">
-    <input type="submit" value="Order">
+<form action="emptycart.php">
+<input type="submit" onclick="return confirm('Are you sure you want to delete your cart?')" name="emptycart" value="Empty" style="background-color:red">
 </form>
+
+<br>
+<form action="confirmation.php">
+<input type="submit" value="Order">
+</form>
+<a href="browse.php"> Back to Browse</a>
 </div>
 </form>
 </body>
