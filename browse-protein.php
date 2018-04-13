@@ -193,7 +193,7 @@ if(($_SESSION["loggedin"]) == 0) {
 <th> Add to Cart </th>
 </tr>
 <?php
-$sql = "SELECT name, quantity, category  FROM inventory";
+$sql = "SELECT name, quantity, category  FROM inventory WHERE category='protein';";
 $result = mysql_query($sql);
 $count = mysql_num_rows($result);
 if(mysql_num_rows($result)>0) {

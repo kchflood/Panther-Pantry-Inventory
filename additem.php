@@ -51,10 +51,18 @@ include("config.php");
 <h3 style="align-text:center"> Fill in each blank and click Add Item to update the inventory!</h3>
 <form action="" method="post">
     Name of item: <input type="text" name="itemname" size="10"> <br>
-    <br>
+    <p> *Name of item cannot contain spaces, use "-"" for two words. Example: Canned-Fruit*</p>
     Quantity: <input type="text" name="quantity" size="10"> <br>
     <br>
-    Category: <input type="text" name="category" size="10"> <br>
+    Category: <select name="category" size="6">
+                <option value="Fruit"> Fruit </option>
+                <option value="Vegetable"> Vegetable </option>
+                <option value="Protein"> Protein </option>
+                <option value="Dairy"> Dairy </option>
+                <option value="Grain"> Grain </option>
+                <option value="Other"> Other </option>
+              </select>
+    <br>
     <br>
 <?php
 $name = $_POST["itemname"];
