@@ -1,2 +1,26 @@
 # Panther-Pantry-Inventory
-A program to manage the food truck's inventory
+
+Personnel: Kevin Flood, Joshua Jang, Stephen Njuguna, Chin Yik Tan
+
+4/13/18
+
+Problem Statement:
+
+The Panther Pantry Inventory Manager System will be used by Georgia State’s Panther Pantry to operate the food bank efficiently and effectively. The system will have features that benefit student shoppers and the graduate students that run the program. 
+The Georgia State Panther Pantry was founded by nutrition graduate students in 2014 after a campus survey that revealed that up to 68% of students experience food insecurity at some point in their school life. According to the school’s page, the GSU pantry serves about forty students a month. Therefore, it is compelling and worth developing for it plays an important role in our university. Moreover, our new system will make it more reliable and appealing and that could in turn increase the number of students that it serves. 
+According to our analysis with the students that run the program, they experience various difficulties in its operation. They believe that maximum effectiveness of the program could be attained with various optimizations. Here are some of the problems they face: 
+•	The pantry does not have a dedicated website and relies heavily on their Facebook page, which isn’t very active. As a result, not many students know that the organization exists. 
+•	The pantry uses outdated record keeping methods such as hard copies of invoices and excel spreadsheets. This makes it very difficult to track or find the exact location of a specific record that may be needed for reference.  
+•	Due to lots of labor needs, the pantry often requires more volunteers than they currently have and that can be hard to find on campus. Extra staffing to run the pantry wastes a lot of precious student time that could be used more productively towards proving more tailored customer service or towards academia. 
+•	Poor record keeping practices also lead to inaccurate inventory records. Consequently, such records do affect budgets and overall financial health of the pantry. The records are also not secure and could be easily misplaced. Lost records could lead to failure of the organization.  
+•	Students cannot tell what’s in stock unless they call ahead or walk to the pantry. This inconvenience turns away frustrated customers. Despite being run by students majoring in nutrition-related fields, there are no formal ways of making recommendations to the shoppers. This is a wasted resource since those that run it can use their knowledge to educate the students. 
+•	There are not many available alternatives for the current operation other than upgrading to newer scientific methods and technologies. We live in a world where everything is dependent on latest technology and complex systems. Making use of these resources that are certainly appealing to students would be great for all parties involved. 
+On our proposed system, potential student customers will be able to visit the pantry page and shop from there. They will be able to see the available products, add items to a cart, and readily reserve their free order. They can then pick up their order from the Pantry at their own convenience. The students will also be offered suggestions for getting nutritionally balanced combination of products. This feature will be a great tool for those seeking to improve their nutrition while on a budget. The system will also sort inventory by various dietary restrictions such as gluten-free, vegetarian, and vegan, to name a few. Those individuals and organizations that wish to donate to the pantry will have the option to do so on our system. Our system will also give the users an option to save their profile so that they can conduct future transactions effortlessly.  
+The Pantry managers (graduate students who run it) will be able to adjust stock, update new products, delete discontinued items, and add new items. With their expertise in nutrition and dietary subjects, the system will have a setup such that they can suggest and recommend the products to shoppers. The system will also have a real-time update so that they will instantly know what’s in stock. Panther Pantry System will be able to recommend fast moving items that the pantry needs to stock up on. Using automatic updating will help reduce human error and save a lot of time. Our system will allow the management to build reports based on various queries such as quantity and category (produce, canned goods, drinks, etc.),   
+Using software engineering and computer science resources, the pantry system will be developed to solve the problems mention above and maximize the effectiveness of the program at Georgia State University.  The system will be affordable and readily available within the designated time. Our team is enthusiastic about building the system knowing that they are maximizing the potential of this program and making a difference in the lives of those that it touches. 
+
+Software Development Cycle:
+
+The program was designed using a layered architecture approach, and is dependent on two central databases that are housed in a MySQL server. These databases provide functionality through logic and functions coded in PHP, and the website is supported using HTML and CSS. 
+
+
